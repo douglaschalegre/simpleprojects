@@ -1,0 +1,48 @@
+#relogio{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 4em;
+    color: white;
+}
+
+.centralizar{
+    
+    margin: auto;
+    text-align: center;
+    position: center;
+    margin-top: 20%;
+    
+}
+
+.texto{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9em;
+    color: white;  
+    margin-top: 0;
+}
+.textoSecreto{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9em;
+    color: black;
+    width: 100px;  
+    margin-top: 20%;
+}
+.textoSecreto:hover{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9em;
+    color: white;
+    width: 100px;  
+    margin-top: 20%;
+}
+
+#rodape{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.7em;
+    color: white;  
+    position: fixed; 
+    bottom: 0; 
+    right: 0;
+}
+
+body{
+    background: black; 
+}
