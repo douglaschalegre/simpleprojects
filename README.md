@@ -1,5 +1,5 @@
 # simples
-Repositorio para projetos simples como estudos sobre javascript puro, manipulação da dom etc.
+Repositorio para projetos simples como estudos sobre javascript puro, php, manipulação da dom etc.
 
 # clock
 Basic digital clock made with JS
