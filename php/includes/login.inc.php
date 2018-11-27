@@ -11,20 +11,20 @@ if(isset($_POST['submit'])){
 
     //empty inputs
     if(empty($uid) || empty($password)){
-        header("Location: ../index.php?login=error1");
+        header("Location: ../index.php?login=empty");
         exit();
     } else{
         $sql = "SELECT * FROM users WHERE user_uid = '$uid'";
         $result = mysqli_query($connection,$sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck < 1){
-            header("Location: ../index.php?login=error2");
+            header("Location: ../index.php?login=userorpass");
             exit();
         } else {
             if ($row = mysqli_fetch_assoc($result)){
                 $hasedPwdCheck = password_verify($password,$row['user_pwd']);
                 if($hasedPwdCheck == false){
-                    header("Location: ../index.php?login=error3");
+                    header("Location: ../index.php?login=userorpass");
                     exit();
                 } elseif ( $hasedPwdCheck == true){
                     //Log in

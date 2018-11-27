@@ -9,7 +9,8 @@ session_start();
 	<title>PHP Login system!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-	<script src="jquery-3.3.1.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 	
 </head>
 <body>

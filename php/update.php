@@ -5,6 +5,7 @@
     if(empty($_GET['id'])){ 
         header('Location: ulist.php');
     }
+
     $id = $_GET['id'];
     $sql = "SELECT * FROM `users` WHERE user_id = $id";
     $query = mysqli_query($connection, $sql);
@@ -35,8 +36,16 @@
             <input type="password" name="pwd" placeholder="Password">
             <button type="submit" name="submit"> Atualizar </button>
             <?php 
-                 if(isset($_GET['signup'])){
-                    echo '<script>alert("Dados atualizados!");</script>';   
+                 if(isset($_GET['update'])){
+                    if($_GET['update'] == "sucess"){
+                        echo '<script>alert("Dados cadastrados!");</script>';   
+                    }if($_GET['update'] == "userunavailable"){
+                        echo '<script>alert("Usuario indisponivel!");</script>';   
+                    }if($_GET['update'] == "invalidcharacters"){
+                        echo '<script>alert("Caracteres invalidos no nome ou sobrenome!");</script>';   
+                    }if($_GET['update'] == "empty"){
+                        echo '<script>alert("Parece que algum campo ficouo vazio!");</script>';   
+                    }
                 }
             ?>
         </form>

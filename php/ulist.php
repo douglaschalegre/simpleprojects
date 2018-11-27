@@ -30,8 +30,12 @@
                             <td>'.$data['user_email'].'</td>
                             <td>'.$data['user_uid'].'</td>
                             <td>
-                                <a class="edit" href="update.php?id='.$data['user_id'].'">editar</a>
-                                <a class="delete" href="delete.php?id='.$data['user_id'].'">deletar</a>
+                                <a class="edit" href="update.php?id='.$data['user_id'].'"><i class="material-icons">
+                                edit
+                                </i></a>
+                                <a class="delete" href="delete.php?id='.$data['user_id'].'"><i class="material-icons">
+                                delete_sweep
+                                </i></a>
                             </td>
                         </tr>';
                     }

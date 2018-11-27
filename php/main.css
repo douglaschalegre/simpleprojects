@@ -246,9 +246,76 @@ header .nav-login form a:hover{
 .signup-form button:hover{
   background-color: rgba(154,175,199);
 }
+/*ulist.php*/
+table{
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+}
+
+table th{
+  background: rgb(131, 228, 188);
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+}
+table td{
+  padding: 10px;
+}
+table td a i{
+  color: rgba(0, 0, 0, 0.596);
+  transition: 0.6s;
+}
+table td a i:hover{
+  color: rgba(0, 0, 0);
+}
+table tr:nth-child(even){
+  background: #fff;
+}
 
 /*update.php*/
 
 
 
 /*delete.php*/
+
+.data-delete{
+  text-align: center;
+  padding: 25px;
+}
+.data-delete h3{
+  color: red;
+  margin-bottom: 10px;
+}
+.data-delete span{
+  color: red;
+}
+
+.btnCancelar{
+  text-align: center;
+  margin-top: 15px;
+  background-color: #008CBA; /* blue */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btnDeletar{
+  text-align: center;
+  height: 46px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}

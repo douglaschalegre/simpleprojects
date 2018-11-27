@@ -15,7 +15,15 @@
             <button type="submit" name="submit"> Cadastrar </button>
             <?php 
                  if(isset($_GET['signup'])){
-                    echo '<script>alert("Dados cadastrados!");</script>';   
+                    if($_GET['signup'] == "sucess"){
+                        echo '<script>alert("Dados cadastrados!");</script>';   
+                    }if($_GET['signup'] == "userunavailable"){
+                        echo '<script>alert("Usuario indisponivel!");</script>';   
+                    }if($_GET['signup'] == "invalidcharacters"){
+                        echo '<script>alert("Caracteres invalidos no nome ou sobrenome!");</script>';   
+                    }if($_GET['signup'] == "empty"){
+                        echo '<script>alert("Parece que algum campo ficouo vazio!");</script>';   
+                    }
                 }
             ?>
         </form>
