@@ -9,6 +9,7 @@ session_start();
 	<title>PHP Login system!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<script src="jquery-3.3.1.min.js"></script>
 	
 </head>
 <body>
@@ -16,7 +17,12 @@ session_start();
 		<nav>
 			<div class="main-wrapper">
 				<ul>
-					<li><a href="index.php">Home</a></li>
+					<li class="teste"><a href="index.php">Home</a></li>
+					<?php
+						if(isset($_SESSION['u_id'])){
+							echo "<li><a href=\"ulist.php\">Users List</a></li>";
+						}
+					?>
 				</ul>
 				<div class="nav-login">
                     <?php

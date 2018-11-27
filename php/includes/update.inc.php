@@ -4,6 +4,7 @@ if(isset($_POST['submit'])){
 
     include_once 'db.php';
 
+    $id = mysqli_real_escape_string($connection,$_POST['id']);
     $first = mysqli_real_escape_string($connection,$_POST['first']);
     $last = mysqli_real_escape_string($connection,$_POST['last']);
     $email = mysqli_real_escape_string($connection,$_POST['email']);
@@ -12,13 +13,13 @@ if(isset($_POST['submit'])){
 
     //Checking empty fields
     if(empty($first) || empty($last) || empty($uid) || empty($email) || empty($password)){
-        header("Location: ../signup.php?signup=empty");
+        header("Location: ../ulist.php?update=empty");
         exit();
     }else{
            
         //Checking if characters are valid
         if(!preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/",$last)){
-            header("Location: ../signup.php?signup=invalidcharacters");
+            header("Location: ../ulist.php?update=invalidcharacters");
             exit();
         }
         else{
@@ -31,19 +32,20 @@ if(isset($_POST['submit'])){
             //else{
                 
                 //checking if user is available
-                $sql = "SELECT * FROM users WHERE user_uid = '$uid'";
+                $sql = "SELECT * FROM users WHERE user_uid = '$id'";
                 $result = mysqli_query($connection,$sql);
                 $resultCheck = mysqli_num_rows($result);
                 if($resultCheck > 0){
-                    header("Location: ../signup.php?signup=userunavailable");
+                    header("Location: ../ulist.php?update=userunavailable");
                     exit();
                 }
                 else{
                     $hashed = password_hash($password, PASSWORD_DEFAULT);
                     //Inserting user in db
-                    $sql = "INSERT INTO users (user_first, user_last, user_email, user_uid, user_pwd) VALUES ('$first','$last','$email','$uid','$hashed');";
+                    $sql = "UPDATE users
+                    SET user_email='$email', user_first='$first', user_last='$last', user_uid='$uid', user_pwd='$password' WHERE user_id = $id ";
                     mysqli_query($connection, $sql);
-                    header("Location: ../signup.php?signup=sucess");
+                    header("Location: ../ulist.php?update=sucess&id=".$uid);
                     exit();
                     
                 }
@@ -51,6 +53,6 @@ if(isset($_POST['submit'])){
         }
     }
 }else{
-    header("Location: ../signup.php");
+    header("Location: ../update.php");
     exit();
 }
